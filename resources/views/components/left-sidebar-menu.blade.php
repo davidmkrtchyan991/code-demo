@@ -1,0 +1,11 @@
+@if($user)
+    @if($user->isAdministrator())
+        @include('admin.left-sidebar-menu')
+    @elseif($user->isTechManager())
+        @include('tech-manager.left-sidebar-menu')
+    @elseif($user->isOptimizer())
+        @include('optimizer.left-sidebar-menu')
+    @elseif($user->isClient())
+        @include('client.left-sidebar-menu')
+    @endif
+@endif
